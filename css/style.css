@@ -1,0 +1,794 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+div,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+caption,
+th,
+td,
+form,
+button,
+label,
+address,
+blockquote,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  font-weight: 100;
+}
+
+body {
+  max-width: 1440px;
+  height: auto;
+  font-family: "'Open Sans', sans-serif, メイリオ", Meiryo, "游ゴシック体", YuGothic, sans-serif !important;
+  color: #000;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+.white {
+  color: #fff;
+}
+
+.black {
+  color: #000;
+}
+
+@media only screen and (max-width: 1025px) {
+  #pc {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1026px) {
+  #smp {
+    display: none;
+  }
+}
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+
+.flex-space-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.flex-space-around {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+.flex-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+/* header */
+.header-fixed {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 9999;
+}
+
+.header-left {
+  margin-left: 30px;
+}
+
+.logo {
+  width: auto;
+  height: 50px;
+}
+
+@media only screen and (max-width: 769px) {
+  .logo {
+    margin-top: 10px;
+  }
+}
+
+.header-fixed ul {
+  margin-left: 50px;
+}
+
+.header-fixed ul li {
+  margin-top: 12px;
+  margin-left: 50px;
+}
+
+.header-fixed ul li a {
+  font-size: 14px;
+  color: #000;
+}
+
+.header-fixed ul li a:hover {
+  color: gray;
+}
+
+.header-fixed p {
+  font-size: 14px;
+}
+
+.header-fixed p a:hover {
+  color: gray;
+}
+
+.header-right {
+  margin-right: 30px;
+}
+
+@media only screen and (max-width: 769px) {
+  .header-right {
+    margin-top: 30px;
+    margin-right: 0;
+  }
+}
+
+.icon {
+  margin: 5px 10px;
+}
+
+.icon:hover {
+  color: gray;
+}
+
+/* hamburger menu */
+
+nav.NavMenu {
+  position: fixed;
+  /*表示位置を固定*/
+  z-index: 2;
+  /*重ね順を変更*/
+  top: 0;
+  /*表示位置を指定*/
+  left: 0;
+  /*表示位置を指定*/
+  background: #fff;
+  /*背景を白にする*/
+  color: #000;
+  /*文字色を黒にする*/
+  text-align: center;
+  /*テキストを中央揃え*/
+  width: 100%;
+  /*全幅表示*/
+  transform: translateY(-100%);
+  /*ナビを上に隠す*/
+  transition: all 0.6s;
+  /*アニメーションの時間を指定*/
+  height: 100%;
+  opacity: 0.9;
+  padding-top: 100px;
+}
+
+nav.NavMenu p {
+  margin: 15px 0 5px 0;
+  font-size: 12px;
+}
+
+nav.NavMenu ul {
+  background: #fff;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+nav.NavMenu ul li {
+  width: 200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+nav.NavMenu ul li a {
+  font-size: 20px;
+  display: block;
+  color: #000;
+  padding: 0.3rem 0;
+}
+
+/*トグルボタンが押されたときに付与するクラス*/
+nav.NavMenu.active {
+  transform: translateY(0%);
+}
+
+/*トグルボタンのスタイルを指定*/
+.Toggle {
+  display: block;
+  position: fixed;
+  /* bodyに対しての絶対位置指定 */
+  right: 20px;
+  top: 15px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.Toggle span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  border-bottom: solid 2px #000;
+  -webkit-transition: 0.35s ease-in-out;
+  /*変化の速度を指定*/
+  -moz-transition: 0.35s ease-in-out;
+  /*変化の速度を指定*/
+  transition: 0.35s ease-in-out;
+  /*変化の速度を指定*/
+  left: 3.8px;
+}
+
+.Toggle span:nth-child(1) {
+  top: 7px;
+}
+
+.Toggle span:nth-child(2) {
+  top: 14px;
+}
+
+.Toggle span:nth-child(3) {
+  top: 21px;
+  border-bottom: solid 2px #fff;
+}
+
+.Toggle span:nth-child(4) {
+  top: 24px;
+  font-size: 6px;
+  border: none;
+  color: #fff;
+}
+
+/* 最初のspanをマイナス45度に */
+.Toggle.active span:nth-child(1) {
+  top: 18px;
+  left: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* 2番目と3番目のspanを45度に */
+.Toggle.active span:nth-child(2) {
+  top: 18px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.Toggle.active span:nth-child(3) {
+  display: none;
+}
+
+.Toggle.active span:nth-child(4) {
+  display: none;
+}
+
+/* main */
+main {
+  background-color: black;
+}
+
+.first-view {
+  padding-top: 50px;
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 1025px) {
+  .first-view {
+    padding-top: 0;
+  }
+}
+
+.scroll-stop {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 1025px) {
+  .scroll-stop {
+    overflow: auto;
+    scroll-snap-type: none;
+    height: auto;
+  }
+}
+
+.stop-point {
+  scroll-snap-align: center;
+  height: 100vh;
+}
+
+@media only screen and (max-width: 1025px) {
+  .stop-point {
+    height: auto;
+  }
+}
+
+.flex-box-50 {
+  width: 50%;
+  height: auto;
+}
+
+@media only screen and (max-width: 1025px) {
+  .flex-box-50 {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.flex-box-50 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.flex-box-25 {
+  width: 25%;
+  height: auto;
+}
+
+@media only screen and (max-width: 1025px) {
+  .flex-box-25 {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .flex-box-25 {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.flex-box-25 img {
+  display: block;
+}
+
+@media only screen and (max-width: 769px) {
+  .flex-box-25 img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
+.text {
+  margin: 50px;
+  margin-bottom: 0;
+  widows: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1025px) {
+  .text {
+    margin: 1.5em;
+    margin-bottom: 0;
+  }
+}
+
+.first-view h1 {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 1025px) {
+  .first-view h1 {
+    margin-bottom: 1.5em;
+  }
+}
+
+.first-view h2 {
+  font-size: 20px;
+  color: white;
+}
+
+@media only screen and (max-width: 1025px) {
+  .first-view h2 {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+}
+
+.first-view h3 {
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+}
+
+.link-box {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 50%;
+}
+
+@media only screen and (max-width: 769px) {
+  .link-box {
+    padding-top: 115px;
+  }
+}
+
+.link-box:hover {
+  background-color: white;
+  color: #000;
+  transition: 0.8s;
+}
+
+.link-box::before {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 80px;
+  background-color: #fff;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.link-box::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 80px;
+  background-color: #fff;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.link-box:hover::before {
+  background-color: #000;
+  transition: 0.8s;
+}
+
+.link-box:hover::after {
+  background-color: #000;
+  transition: 0.8s;
+}
+
+/* gallery */
+.gallery-content {
+  padding-top: 50px;
+  width: 100%;
+  height: auto;
+}
+
+.h2-text {
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  margin: 20px 0;
+}
+
+/* food drink */
+
+.food-drink-content {
+  padding-top: 50px;
+}
+
+.bg-gray {
+  background-color: lightgray;
+}
+
+.food-drink-content h3 {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.food-drink-content p {
+  font-size: 12px;
+}
+
+.food-text {
+  width: 100%;
+  height: 70%;
+  padding: 30px 30px 0 30px;
+}
+
+@media only screen and (max-width: 769px) {
+  .food-text {
+    width: 100%;
+    height: 70%;
+    padding: 30px 30px 0 30px;
+  }
+}
+
+.btn-menu-black {
+  font-size: 12px;
+  display: inline-block;
+  padding: 0 20px;
+  margin-left: 30px;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #fff;
+  border: solid 1px #fff;
+  transition: .5s;
+}
+
+.btn-menu-black:hover {
+  background: white;
+  color: #000;
+}
+
+.btn-menu-gray {
+  font-size: 12px;
+  display: inline-block;
+  padding: 0 20px;
+  margin-left: 30px;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #000;
+  border: solid 1px #000;
+  transition: .5s;
+}
+
+.btn-menu-gray:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* party plan */
+.party-plan-content {
+  padding-top: 50px;
+}
+
+.party-plan-content h3 {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.party-plan-content p {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.btn-party-plan {
+  font-size: 12px;
+  display: inline-block;
+  padding: 0 20px;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #fff;
+  border: solid 1px #fff;
+  transition: .5s;
+}
+
+@media only screen and (max-width: 1025px) {
+  .btn-party-plan {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.btn-party-plan:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btn-event-enquiry {
+  font-size: 12px;
+  display: inline-block;
+  padding: 0 20px;
+  margin-top: 120px;
+  text-decoration: none;
+  color: #000;
+  border: solid 1px #000;
+  transition: .5s;
+}
+
+@media only screen and (max-width: 1025px) {
+  .btn-event-enquiry {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+.btn-event-enquiry:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* about us */
+.about-us-content {
+  padding-top: 50px;
+}
+
+.about-us-content h3 {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.about-us-content p {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1025px) {
+  .about-us-content p {
+    padding-bottom: 30px;
+  }
+}
+
+/* contact us */
+.contact-us-content {
+  padding-top: 50px;
+}
+
+.contact-us-content h3 {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.contact-us-content p {
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+@media only screen and (max-width: 1025px) {
+  .contact-us-content p {
+    padding-bottom: 30px;
+  }
+}
+
+.contact-us-link {
+  position: relative;
+}
+
+.contact-us-link-h3 {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.contact-us-link-h3 a {
+  font-size: 12px;
+}
+
+.news-letter-box {
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+@media only screen and (max-width: 769px) {
+  .news-letter-box {
+    width: 100%;
+    height: 350px;
+  }
+}
+
+.news-letter-box h4 {
+  font-size: 16px;
+  margin: 20px;
+}
+
+.news-letter-box h5 {
+  font-size: 14px;
+}
+
+.text-box {
+  width: 250px;
+  height: 30px;
+  border: none;
+  border-bottom: solid 1px black;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.submit-box {
+  width: 100%;
+  height: auto;
+}
+
+.btn-submit {
+  width: 100px;
+  height: auto;
+  font-size: 12px;
+  text-decoration: none;
+  color: #000;
+  border: solid 1px #000;
+  transition: .5s;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 1025px) {
+  .btn-submit {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+  }
+}
+
+.btn-submit:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* footer */
+.footer {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  background-color: #fff
+}
+
+.footer p {
+  font-size: 8px;
+  text-align: center;
+}
