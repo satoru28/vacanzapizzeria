@@ -46,6 +46,7 @@ video {
   border: 0;
   outline: 0;
   font-size: 100%;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-weight: 100;
 }
@@ -217,8 +218,10 @@ nav.NavMenu {
   /*テキストを中央揃え*/
   width: 100%;
   /*全幅表示*/
+  -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
   /*ナビを上に隠す*/
+  -webkit-transition: all 0.6s;
   transition: all 0.6s;
   /*アニメーションの時間を指定*/
   height: 100%;
@@ -254,6 +257,7 @@ nav.NavMenu ul li a {
 
 /*トグルボタンが押されたときに付与するクラス*/
 nav.NavMenu.active {
+  -webkit-transform: translateY(0%);
   transform: translateY(0%);
 }
 
@@ -277,7 +281,6 @@ nav.NavMenu.active {
   border-bottom: solid 2px #000;
   -webkit-transition: 0.35s ease-in-out;
   /*変化の速度を指定*/
-  -moz-transition: 0.35s ease-in-out;
   /*変化の速度を指定*/
   transition: 0.35s ease-in-out;
   /*変化の速度を指定*/
@@ -309,7 +312,6 @@ nav.NavMenu.active {
   top: 18px;
   left: 6px;
   -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
@@ -317,7 +319,6 @@ nav.NavMenu.active {
 .Toggle.active span:nth-child(2) {
   top: 18px;
   -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -349,12 +350,16 @@ main {
 .scroll-stop {
   overflow: auto;
   scroll-snap-type: y mandatory;
+  -ms-scroll-snap-type: y mandatory;
+  -webkit-scroll-snap-type: y mandatory;
+  -moz-scroll-snap-type: y mandatory;
   height: 100vh;
 }
 
 @media only screen and (max-width: 1025px) {
   .scroll-stop {
     overflow: auto;
+    -ms-scroll-snap-type: none;
     scroll-snap-type: none;
     height: auto;
   }
@@ -373,7 +378,7 @@ main {
 
 .flex-box-50 {
   width: 50%;
-  height: auto;
+  height: 50vh;
 }
 
 @media only screen and (max-width: 1025px) {
@@ -385,13 +390,13 @@ main {
 
 .flex-box-50 img {
   width: 100%;
-  height: auto;
+  height: 50vh;
   display: block;
 }
 
 .flex-box-25 {
   width: 25%;
-  height: auto;
+  height: 50vh;
 }
 
 @media only screen and (max-width: 1025px) {
@@ -409,12 +414,15 @@ main {
 
 .flex-box-25 img {
   display: block;
+  height: 50vh;
+  width: 100%;
 }
 
 @media only screen and (max-width: 769px) {
   .flex-box-25 img {
     width: 100%;
     height: 250px;
+    -o-object-fit: cover;
     object-fit: cover;
   }
 }
@@ -482,6 +490,7 @@ main {
 .link-box:hover {
   background-color: white;
   color: #000;
+  -webkit-transition: 0.8s;
   transition: 0.8s;
 }
 
@@ -513,11 +522,13 @@ main {
 
 .link-box:hover::before {
   background-color: #000;
+  -webkit-transition: 0.8s;
   transition: 0.8s;
 }
 
 .link-box:hover::after {
   background-color: #000;
+  -webkit-transition: 0.8s;
   transition: 0.8s;
 }
 
@@ -577,6 +588,7 @@ main {
   text-decoration: none;
   color: #fff;
   border: solid 1px #fff;
+  -webkit-transition: .5s;
   transition: .5s;
 }
 
@@ -594,6 +606,7 @@ main {
   text-decoration: none;
   color: #000;
   border: solid 1px #000;
+  -webkit-transition: .5s;
   transition: .5s;
 }
 
@@ -625,6 +638,7 @@ main {
   text-decoration: none;
   color: #fff;
   border: solid 1px #fff;
+  -webkit-transition: .5s;
   transition: .5s;
 }
 
@@ -648,6 +662,7 @@ main {
   text-decoration: none;
   color: #000;
   border: solid 1px #000;
+  -webkit-transition: .5s;
   transition: .5s;
 }
 
@@ -762,6 +777,7 @@ main {
   text-decoration: none;
   color: #000;
   border: solid 1px #000;
+  -webkit-transition: .5s;
   transition: .5s;
   cursor: pointer;
   margin-top: 40px;
