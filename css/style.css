@@ -394,6 +394,12 @@ main {
   display: block;
 }
 
+@media only screen and (max-width: 1025px) {
+  .flex-box-50 img {
+    height: auto;
+  }
+}
+
 .flex-box-25 {
   width: 25%;
   height: 50vh;
@@ -408,7 +414,6 @@ main {
 @media only screen and (max-width: 769px) {
   .flex-box-25 {
     width: 100%;
-    height: 250px;
   }
 }
 
@@ -421,7 +426,6 @@ main {
 @media only screen and (max-width: 769px) {
   .flex-box-25 img {
     width: 100%;
-    height: 250px;
     -o-object-fit: cover;
     object-fit: cover;
   }
@@ -478,13 +482,7 @@ main {
   display: block;
   width: 100%;
   height: 100%;
-  padding-top: 50%;
-}
-
-@media only screen and (max-width: 769px) {
-  .link-box {
-    padding-top: 115px;
-  }
+  padding-top: 23.5vh;
 }
 
 .link-box:hover {
@@ -501,7 +499,7 @@ main {
   width: 80px;
   background-color: #fff;
   position: absolute;
-  top: 40%;
+  top: 20vh;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -514,7 +512,7 @@ main {
   width: 80px;
   background-color: #fff;
   position: absolute;
-  top: 60%;
+  top: 30vh;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -799,9 +797,9 @@ main {
 /* footer */
 .footer {
   width: 100%;
-  height: auto;
-  padding: 10px;
-  background-color: #fff
+  height: 50px;
+  padding-top: 20px;
+  background-color: #fff;
 }
 
 .footer p {
